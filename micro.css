@@ -1,0 +1,280 @@
+<style>
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* portrait mode warning */
+#warning-message { display: none;
+background-color: black;
+color:white;
+font-size:30px;
+}
+
+
+/* query screen size and display either portrait warning or full menu content */
+
+@media only screen and (orientation:portrait){
+.outer { display:none; }
+#warning-message { display:block; }
+
+ }
+
+@media only screen and (orientation:landscape){
+        #warning-message { display:none; }
+
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+    }
+
+body {
+    /* path to custom cursor */
+    cursor: url('images/cursor.cur'), default;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    }
+
+/*background*/
+.outer {
+    background: url('images/collage.png') fixed;
+    /*background-size: contain;*/
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat no-repeat;
+    background-position: right;
+    background-color: black;
+    }
+
+/*Container for center console*/
+.container {
+    /*background: url('images/collage 5.9.jpg') fixed;*/
+    position: relative;
+    width: 50%;
+    left: 5%;
+    /*background: url('images/collage 5.9.jpg') fixed;*/
+    background-color: rgba(130, 20, 120,0);
+    }
+
+/* header image properties */
+.masthead img {
+    /* image will scale to width of container & maintain aspect ratio */
+    width: 100%;
+    background: url('images/collage 5.9.jpg') fixed;
+    }
+
+/*https://www.w3schools.com/howto/howto_css_image_text.asp*/
+/* Container holding the image and the text */
+    .button-container {
+      position: relative;
+      width: 55%;
+      left: 0%;
+      font-size: 20px;
+      font-family: font-family: 'EB Garamond', serif;
+      color: rgba(130, 20, 120,0);
+      text-align: center;
+      text-shadow: 1px 1px white;
+      }
+
+    /* Bottom left text */
+    .bottom-left {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+      color: white;
+      }
+
+    /* Top left text */
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      color: white;
+      }
+
+    /* Top right text */
+    .top-right {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      color: white;
+      }
+
+    /* Bottom right text */
+    .bottom-right {
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+      color: white;
+      }
+
+      /* Centered text */
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-family: 'Lato', sans-serif;
+      transform: translate(-50%, -50%);
+      color: black;
+      }
+
+    a{
+      color: #ffd700;
+      }
+
+    a:visited {
+      color: rgba(150,150,150,0.1);
+      }
+
+    .button-container:hover {
+      /*text-decoration: orange wavy underline;*/
+      text-shadow: 3px 3px white;
+      /*background: rgba(255,255,255,0.5);*/
+      }
+
+    .button-container:hover {
+      text-decoration: orange wavy underline;
+      text-shadow: 2px 2px white;
+      background: rgba(255,255,255,0);
+      }
+
+/* links to patreon, homepage etc. */
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 3%;
+    width: 66%;
+    left: 17%;
+    margin-top: 20%;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #3c78d8;
+    }
+
+
+.contact-item {
+    padding: 1%;
+    margin: 1%;
+    border: 3px ridge white;
+    width: 24%;
+    text-align: center;
+    color: #ff0000;
+    text-decoration: none;
+    background: rgba(255, 255, 255,0.5);
+    background-position: bottom;
+    }
+
+.contact-item:hover {
+    /*text-decoration: underline dotted;*/
+    text-shadow: 1px 1px #C0C0C0;
+    background: black;
+    }
+
+
+/* style for menu container */
+
+#playlist-frame {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 25vh;
+    }
+
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+    max-width: 100%;
+    left: 0%;
+    height: 1400px;
+    /* what font should the titles be? */
+    font-family: font-family: 'EB Garamond', serif;
+    text-align: center;
+    }
+
+.plays >* {
+    flex: 1 0 25%;
+    }
+
+.item {
+    padding: 0;
+    min-height: 3rem;
+    align-self: center;
+    align-content: center;
+    border: 2px ridge black;
+    min-width: 30%;
+    max-width: 30%;
+    color: #ffd700;
+    text-decoration: none;
+    background: rgba(0,0,0,0.8);
+    }
+
+/* link style after visited */
+.item:visited {
+    color: #4c4141;
+    background: rgba(0,0,0,1);
+    }
+
+/* link style on mouse hover */
+.item:hover {
+    /*text-decoration: orange wavy underline;*/
+    /*text-shadow: 2px 2px red;*/
+    background: rgba(255,255,255,0);
+    }
+
+
+
+/* intro video sizing & positioning */
+.intro-vid {
+    position: relative;
+    width: 95%;
+    left: 2.5%;
+    padding-bottom: 45px;
+    }
+
+
+/* fire footer */
+.footer {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    /* with whatever you want to stick at the bottom */
+    background: url('images/fire.gif');
+    }
+
+
+/* youtube */
+
+.youtube-responsive-container {
+position:relative;
+padding-bottom:30%;
+padding-top:30%;
+height:0;
+/* overflow:hidden;  i feel like this is why the bottom player controls get cut off*/
+}
+
+.youtube-responsive-container iframe,
+.youtube-responsive-container object,
+.youtube-responsive-container embed {
+position:absolute;
+width:100%;
+height:100%;
+left: 0%;
+top: 0px;
+}
+
+
+</style>
